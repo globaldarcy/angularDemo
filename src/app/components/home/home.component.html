@@ -1,0 +1,19 @@
+<p>
+  {{msg}}
+</p>
+<button type="button" (click)='getMsg()'>Button</button>
+<hr>
+<div *ngIf="flag">
+  flag = true 显示
+</div>
+
+<button (click)='flag=!flag' type="button">flag</button>
+<hr>
+<input type="text" (keyup)='keyupFn($event)' name="" value="">
+<div>
+  flag content
+</div>
+<hr>
+<input type="text" [(ngModel)]="search" name="" value="">
+<p>{{search}}</p>
+<button type="button" (click)="getSearch()">getSearch</button>

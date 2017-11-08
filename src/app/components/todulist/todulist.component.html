@@ -1,0 +1,15 @@
+<div>
+  <input type="text" name="" value="" [(ngModel)]='username' (keydown)="addData($event)">
+  <h2>正在进行</h2>
+  <ul>
+    <li [hidden]="item.status===false" *ngFor="let item of list; let i = index">
+      <button type="button"(click)="changeData(i)">Change</button>{{item.username}}------------- <button type="button" (click)="delData(i)">del</button>
+    </li>
+  </ul>
+  <h2>已经完成</h2><ul>
+    <li [hidden]="item.status===true" *ngFor="let item of list; let i = index">
+      <button type="button" (click)="changeData(i)">Change</button>{{item.username}}-------------
+      <button type="button" (click)="delData(i)">del</button>
+    </li>
+  </ul>
+</div>
