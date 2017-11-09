@@ -9,22 +9,23 @@ import { NewsComponent } from './components/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 import { TodulistComponent } from './components/todulist/todulist.component';
 import { StorageService } from './services/storage.service';
+import { New2Component } from './components/new2/new2.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 /* @NgModule装饰器将AppModule标记为Angular模块类(也叫NgModule类)
   @NgModule接受一个元数据对象, 告诉Angular如何编译和启动应用 */
 
 @NgModule({
-  /* // 引入当前项目运行的组件, 自定义组件都需要引入并且在这个里面配置 */
-
-
   declarations: [
     AppComponent,
+    FooterComponent,
     TodulistComponent,
     HeaderComponent,
     NewsComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+    New2Component
+  ], /* 引入当前项目运行的组件, 自定义组件�,�需要引入并且在这个里面配置 */
   imports: [  /* // 当前项目依赖那些模块 */
     BrowserModule,
     FormsModule,

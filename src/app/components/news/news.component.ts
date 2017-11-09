@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Jsonp, Headers } from '@angular/http';
+import { Observable } from 'rxjs';
+import 'rxjs/Rx';
+
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -16,13 +20,14 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.requestJsonpData();
   }
   requestData() {
     let _that = this;
-    this.http.get(this.url).subscribe(function (data) {
-      // console.log(JSON.parse(data['_body']));
-      _that.list = JSON.parse(data['_body']).result;
-      console.log(_that.list);
+    this.http.get(this.url).map(res => res.json()).subscribe(function (data) {
+      // console.log(data);
+      _that.list = data.result;
+      // console.log(_that.list);
     }, function (err) {
       console.log(err);
     });
@@ -30,20 +35,22 @@ export class NewsComponent implements OnInit {
 
   requestJsonpData() {
     let _that = this;
-    this.jsonp.get(this.jurl).subscribe(function (data) {
+    this.jsonp.get(this.jurl).map(res => res.json()).subscribe(function (data) {
       // console.log(JSON.parse(data['_body']));
-      _that.list = data['_body'].result;
-      console.log(_that.list);
+      _that.list = data.result;
+      // console.log(_that.list);
     }, function (err) {
       console.log(err);
     });
   }
 
   postData() {
-    this.http.post(this.postUrl, JSON.stringify({'username': ''}), {headers: this.headers}).subscribe(function(data) {
+    this.http.post(this.postUrl, JSON.stringify({'username': ''}), {headers: this.headers}).map(res => res.json()).subscribe(function(data) {
       console.log(data);
     }, function(err) {
       console.log(err);
     });
   }
+
+
 }

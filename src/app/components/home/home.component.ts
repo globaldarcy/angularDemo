@@ -30,5 +30,11 @@ export class HomeComponent implements OnInit {
   getSearch() {
     console.log(this.search);
   }
+  run () {
+    alert('Home run');
+  }
+  parent (fn) {
+    alert(fn + '1111');
+  }
 
 }
