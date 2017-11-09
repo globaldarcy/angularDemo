@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'; /* // BrowserModule, 浏览器解析模块 */
 import { NgModule } from '@angular/core'; /* // 核心模块 */
 import { FormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http'; /* 数据请求模块 */
 /* // 自定义模块 */
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -26,9 +27,11 @@ import { StorageService } from './services/storage.service';
   ],
   imports: [  /* // 当前项目依赖那些模块 */
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    JsonpModule
   ],
-  providers: [StorageService],  /* // 定义的服务 放在这个里面 */
+  providers: [StorageService],  /* // 自定义的服务 放在这个里面 */
   bootstrap: [AppComponent] /* // 引导 默认启动那个组件 */
 })
 
