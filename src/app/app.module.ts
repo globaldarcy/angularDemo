@@ -18,6 +18,11 @@ import {StorageService} from './services/storage.service';
 import {CartComponent} from './components/cart/cart.component';
 import {ProductComponent} from './components/product/product.component';
 import {Routes, RouterModule} from '@angular/router';
+import { NewContentComponent } from './components/new-content/new-content.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ShopcateComponent } from './components/shopcate/shopcate.component';
+import { ShoplistComponent } from './components/shoplist/shoplist.component';
 
 
 /* @NgModule装饰器将AppModule标记为Angular模块类(也叫NgModule类)
@@ -26,21 +31,36 @@ import {Routes, RouterModule} from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'welcome',
+        component: WelcomeComponent
+      },
+      {
+        path: '**',
+        component: WelcomeComponent
+      }
+    ]
   },
   {
-    path: 'news',
-    component: NewsComponent
+    path: 'shop',
+    component: ShopComponent,
+    children: [
+      {
+        path: 'shopcate',
+        component: ShopcateComponent
+      },
+      {
+        path: 'shoplist',
+        component: ShoplistComponent
+      },
+      {
+        path: '**',
+        component: ShopcateComponent
+      }
+    ]
   },
-  {
-    path: 'cart',
-    component: CartComponent
-  },
-    /*{
-      path: '',
-      redirectTo: 'home',
-      pathMatch: 'full'
-    }*/
   {
     path: '**',
     component: HomeComponent
@@ -52,6 +72,11 @@ const routes: Routes = [
     AppComponent,
     CartComponent,
     ProductComponent,
+    NewContentComponent,
+    ShopComponent,
+    WelcomeComponent,
+    ShoplistComponent,
+    ShopcateComponent,
     FooterComponent,
     TodulistComponent,
     HeaderComponent,

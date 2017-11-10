@@ -1,8 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+  height: 100%;
+}
 .header{
   line-height: 50px;
   height: 50px;
   text-align: center;
   background: #000;
   color: #fff;
+}
+.active{
+  color: #f90;
+}
+.con{
+  display: flex;
+  height:100%;
+}
+.con .left{
+  width:200px;
+  background: #98dd77;
+}
+.con .right{
+  flex:1;
+  background: #eee;
 }

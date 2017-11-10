@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   msg: any;
   flag: any;
   search: any;
-  constructor() {
+  constructor(private router: Router) {
     this.msg = '这是一个home组件';
     this.flag = 'true';
     this.search = '';
@@ -38,5 +38,8 @@ export class HomeComponent implements OnInit {
   }
   foo (e) {
     alert(e + 'Output');
+  }
+  goNews() {
+    this.router.navigate(['/new-content', '123']);
   }
 }
