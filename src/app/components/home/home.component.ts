@@ -36,5 +36,7 @@ export class HomeComponent implements OnInit {
   parent (fn) {
     alert(fn + '1111');
   }
-
+  foo (e) {
+    alert(e + 'Output');
+  }
 }

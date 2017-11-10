@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation, Input} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   @Input() search;
   @Input() parent;
   public childInfo = '子组件的数据';
+  @Output() toParent = new EventEmitter();
   constructor() {
   }
 
@@ -21,5 +22,9 @@ export class FooterComponent implements OnInit {
   childFn() {
     this.parent(this.childInfo);
   }
+  foo () {
+    this.toParent.emit('Child Data');
+  }
+
 
 }

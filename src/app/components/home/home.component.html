@@ -1,8 +1,10 @@
-<app-footer [msg] = 'msg' [run] = 'getSearch' [search] = 'search' [parent] = 'parent'></app-footer>
-<br>
-<br>
-Home Component
+<h2 class="header">Home Component</h2>
+
+
 <hr>
+<app-footer [msg] = 'msg' [run] = 'getSearch' [search] = 'search' [parent] = 'parent' (toParent)="foo($event)"></app-footer>
+<br>
+<br>
 <p>
   {{msg}}
 </p>
