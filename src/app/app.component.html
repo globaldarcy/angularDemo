@@ -5,10 +5,18 @@
   <!--</h1>-->
 <!--</div>-->
 <!--<app-home></app-home>-->
-<nav>
-  <a routerLink="/home">Home</a>
-  <a routerLink="/news">News</a>
-  <a routerLink="/cart">Cart</a>
-</nav>
+<!--<h2 class="header">
+  <a routerLink="home" routerLinkActive="active">Home</a>
+  <a routerLink="/news" routerLinkActive="active">News</a>
+  <a routerLink="/cart" routerLinkActive="active">Cart</a>
+  <a routerLink="/shop" routerLinkActive="active">Shop</a>
+  <button (click)="goShop(111, 222)">get Shop</button>
+  <button (click)="goShop('aaa', 'bbb')">get Shop</button>
+</h2>-->
+
+<h2 class="header">
+  <a routerLink="home" routerLinkActive="active">Home</a>
+  <a routerLink="/shop" routerLinkActive="active">Shop</a>
+</h2>
 <router-outlet></router-outlet>
 

@@ -1,5 +1,7 @@
-<h2 class="header">Home Component</h2>
+<!--<h2 class="header">Home Component</h2>
+<hr>
 
+<button (click)="goNews()">点击跳转</button>
 
 <hr>
 <app-footer [msg] = 'msg' [run] = 'getSearch' [search] = 'search' [parent] = 'parent' (toParent)="foo($event)"></app-footer>
@@ -23,4 +25,14 @@
 <hr>
 <input type="text" [(ngModel)]="search" name="" value="">
 <p>{{search}}</p>
-<button type="button" (click)="getSearch()">getSearch</button>
+<button type="button" (click)="getSearch()">getSearch</button>-->
+<div class="con">
+  <div class="left">
+    <ul>
+      <li><a routerLink="/home/welcome" routerLinkActive="active">Welcome</a></li>
+    </ul>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
+</div>

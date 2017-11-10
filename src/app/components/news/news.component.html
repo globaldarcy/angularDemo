@@ -1,4 +1,11 @@
 <h2 class="header">News Component</h2>
+<hr>
+<nav>
+  <a routerLink="/new-content/1" routerLinkActive="active">News1</a>
+  <a routerLink="/new-content/2" routerLinkActive="active">News2</a>
+  <a routerLink="/new-content/3" routerLinkActive="active">News3</a>
+</nav>
+<hr>
 <button type="button" (click)="requestData()">Request</button>
 <button type="button" (click)="requestJsonpData()">Request JSONP</button>
 <button type="button" (click)="postData()">Post</button>
